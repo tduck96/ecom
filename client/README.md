@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Katies Knicknacks
 
 Ecommerce project, online marketspace to sell photography shots. 
 
