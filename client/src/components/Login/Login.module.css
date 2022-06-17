@@ -1,0 +1,61 @@
+.loginbox {
+    display: flex;
+    width:100%;
+    box-sizing: border-box;
+    justify-content: center;
+
+}
+.formContainer {
+  border: .5px solid black;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: 8rem;
+  
+  background-color: rgb(200, 200, 200);
+    
+}
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin: .5rem
+}
+
+.button {
+    margin: 1rem;
+    max-width: 25%;
+    padding: .5rem;
+    background-color: rgb(242, 255, 0);
+    border:none;
+    border-radius: .7rem;
+}
+
+.button:hover {
+    background-color: rgb(82, 234, 82)
+}
+.buttonContainer {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+.signUp {
+    display: flex;
+    background-color: yellow;
+    border: none;
+    height:auto;
+    padding: .5rem;
+    border-radius: .7rem;
+    max-width: 25%;
+    color: black;
+    font-weight: 300;
+}
+a {
+    text-decoration: none;
+    padding: none;
+    margin: 0;
+    border: none;
+    
+}
