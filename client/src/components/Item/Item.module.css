@@ -1,0 +1,28 @@
+.referencePhoto {
+    max-width: 500px;
+    max-height: 400px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      
+}
+.description {
+   padding: 1rem;
+}
+.cartBox {
+   display:flex;
+   flex-direction: column;
+}
+button {
+    padding: 1rem;
+    border: none;
+    margin: .5rem;
+    background-color: green;
+}
+
+button:hover {
+    background-color: rgb(2, 108, 2);
+}

@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+}
+.descriptionandButton {
+    display: block;
+}
+.deleteButton {
+    background-color: red;
+}
+.cartPhoto {
+    height: 150px;
+    width: 200px;
+}

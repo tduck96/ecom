@@ -2,6 +2,9 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
+const app = express();
+app.use(express.json())
+
 const con = mysql.createConnection({
     host: 'localhost', 
     user: 'tom',
@@ -15,13 +18,36 @@ con.connect();
 // `INSERT INTO items
 // VALUES(00000, 'coaster', 10.99, 'Drink Coaster made from pressed flowers', 'www.katelynjdowd.com' )`)
 
-const app = express();
-app.use(express.json())
+
 app.use(cors())
 
 app.post('/api/add', (req, res) => {
     user = req.body;
     console.log(user)
+})
+
+app.get('/api/get', (req, res) => {
+    const sqlFetch = (`SELECT * FROM items`)
+    con.query(sqlFetch, (err, data) => {
+        if (err) console.log(err)
+
+        res.send(data)
+    })
+}
+)
+
+app.get('/api/get/:id', (req, res) => {
+
+    const id = req.params.id
+    console.log(req.params.id)
+    
+    const sqlGetSingle = (`SELECT * FROM items WHERE id = ${id}`)
+
+con.query(sqlGetSingle, (err, data) => {
+    if (err) console.log(err)
+    res.send(data)
+})
+
 })
 
 // app.get('/api/get', (req, res) => {
