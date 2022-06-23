@@ -14,17 +14,54 @@ const con = mysql.createConnection({
 
 con.connect();
 
-// con.query(
-// `INSERT INTO items
-// VALUES(00000, 'coaster', 10.99, 'Drink Coaster made from pressed flowers', 'www.katelynjdowd.com' )`)
 
 
 app.use(cors())
 
-app.post('/api/add', (req, res) => {
-    user = req.body;
-    console.log(user)
+// Create User 
+
+app.post('/api/register', (req, res) => {
+   const email = req.body.email;
+   const password = req.body.password;
+        if (email === undefined || password === undefined) {
+            res.send({error: "Invalid email/password"}) }
+        else {
+            const pushUser = (`INSERT INTO users VALUES ("${email}", "${password}") `)
+
+con.query(pushUser, (err, res) => {
+    if (err) {
+        console.log(err) }
+       else {
+        console.log('record added')
+       }
 })
+}})
+
+// Login user 
+
+app.post('/api/login' , (req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+        const validateUser = (`SELECT * FROM users WHERE email = "${email}" AND password = "${password}"`)
+
+con.query(validateUser, (err, result) => {
+    if (err) {
+     res.send({err: err})
+    }
+
+    if (result.length > 0) {
+        res.send(result)
+    }
+    else {
+        res.send({message: "Wrong username/password"})
+    }
+      }
+  )
+  })
+  
+
+
+// Get Items at Home Page Start up 
 
 app.get('/api/get', (req, res) => {
     const sqlFetch = (`SELECT * FROM items`)
@@ -36,6 +73,8 @@ app.get('/api/get', (req, res) => {
 }
 )
 
+
+// Get item for Detaisl 
 app.get('/api/get/:id', (req, res) => {
 
     const id = req.params.id
@@ -50,10 +89,7 @@ con.query(sqlGetSingle, (err, data) => {
 
 })
 
-// app.get('/api/get', (req, res) => {
-//     const sqlGet = con.query(`SELECT * FROMitems`)
-//     res.send(sqlGet)
-// })
+
 
 app.listen(3001, (req, res) => {
     console.log('running on port 3001')

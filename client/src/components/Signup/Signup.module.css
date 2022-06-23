@@ -40,26 +40,11 @@
     align-items: center;
 
 }
-.signUp {
-    display: flex;
-    background-color: yellow;
-    border: none;
-    height:auto;
-    padding: .5rem;
-    border-radius: .7rem;
-    max-width: 25%;
-    color: black;
-    font-weight: 300;
-}
+
 a {
     text-decoration: none;
     padding: none;
     margin: 0;
     border: none;
     
-}
-
-.errMes {
-    color: red;
-    text-decoration: underline;
 }
