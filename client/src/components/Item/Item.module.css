@@ -1,57 +1,84 @@
 .container {
+    box-sizing: border-box;
     display: flex;
-    font-size: .8rem;
-    margin: 2rem;
-    align-items: center;
-    
+    flex-direction: column;
+    width: 100%;
+    margin: none;
 }
 
-
 .name {
-margin-left: 0;
-margin-bottom: 2rem;
-font-size: 2rem;
+box-sizing: border-box;
+font-size: 1.3rem;
+margin-left: 0rem;
+padding: none;
 
 }
 .referencePhoto {
-    max-width: 400px;
-    max-height: 300px;
+  width: 60%;
+   
 }
 .card {
-    margin-left: 2rem;
+    width: 100%;
+    height: 60%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       
 }
 .description {
-   padding: 1rem;
-   margin-left: 2rem;
+   box-sizing: border-box;
+   margin-left: 1rem;
    display: block;
-   
+   width: 40%;
+   height: 30%;
 
 }
 .cartBox {
- width: 50%;
- display: flex;
- flex-direction: column;
-
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+width: 75%;
+ 
 }
 .cartBut {
-    
-    padding: .75rem;
     border: none;
-    margin-top: .5rem;
     background-color: rgb(45, 72, 246);
     border-radius: 1rem;
-    color: white
+    margin-top: 1rem;
+    color: white;;
+    padding: 1rem;
+}
+.select {
+    border: .05px solid gray;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.select:hover {
+    background-color: rgb(243, 243, 243);
 }
 
 button:hover {
     background-color: rgb(52, 67, 153);
 }
-h1 {
+
+@media screen and (max-width: 750px) and (min-width: 500px) {
+    .card {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+   .container {
+  display: block;
+  margin:0
+   }
+    .card {
+   display: block;
+   margin: 1rem;
+   }
+   .description {
+    margin: 0;
+   }
    
 }

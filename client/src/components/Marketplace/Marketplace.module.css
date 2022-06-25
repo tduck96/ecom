@@ -1,21 +1,46 @@
+.shopContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
 
-  
-
+}
 .container {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat( 4, minmax(150px, 1fr) );
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    width: 90%;
+    height: 100%;
 }
+.flexit {
+    display: flex;
+    justify-content: center;
+}
+.card {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
 .photos {
-    height: 150px;
-    max-height: 175px;
-    width: 200px;
-    max-width: 200px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem;
-    margin: 1rem;
+    
 }
-a {
-    text-decoration: none;
+.link {
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 90%;
+    width: 90%;
     
 }
 
@@ -24,6 +49,21 @@ a:hover {
 }
 
 h1 {
+    box-sizing: border-box;
     margin-left: 2rem;
     color: rgb(71, 71, 71);
 }
+
+
+@media only screen and (max-width: 1000px ) {
+    .container {
+        grid-template-columns:repeat( 2, minmax(250px, 1fr) );
+
+    }
+}
+@media only screen and (max-width: 560px) {
+    .container {
+        grid-template-columns:repeat( 1, minmax(250px, 1fr) )
+    }
+}
+

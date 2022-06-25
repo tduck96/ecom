@@ -3,7 +3,7 @@ import  {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './Item.module.css'
 
-const Item = ({cart, setCart}) => {
+const Item = ({cart, setCart, loggedin}) => {
 
   const { id } = useParams();
 
@@ -53,18 +53,19 @@ console.log(quantity)
     {
       information.map(item => (
         <div className = {styles.card} key = {item.id}>
-          <div className = {styles.header}>
-          <h1 className={styles.name}>{item.name}</h1>
-          <img src = {item.photo_url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
-          </div>
-          <div className = {styles.description}>
           
+          <img src = {item.photo_url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
+          
+          <div className = {styles.description}>
+            <div className = {styles.header}>
+            </div>
+          <h1 className={styles.name}>{item.name}</h1>
           <p> Price : ${item.price} </p>
           <p> <i>{item.description} </i></p>
           
           <div className = {styles.cartBox}>
             <label for ='quantity'>Quantity:</label>
-            <select id = 'quantity' name = 'quantity' onChange = {(e) => 
+            <select id = 'quantity' name = 'quantity' className = {styles.select} onChange = {(e) => 
               setQuantity(e.target.value)}> 
               <option value ='1'>1</option>
               <option value ='2'>2</option>

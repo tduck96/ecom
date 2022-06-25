@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import {useState} from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from './PaymentSuccess.module.css'
 
@@ -13,11 +12,8 @@ const PaymentSuccess = ( {cart, setCart}) => {
         navigate('/')
     }
 
-
-
-    const calculateCart =
-    cart.map(cartItem => cartItem.grandTotalForItem)
-      const accumulatedCartTotal = calculateCart.reduce((a, b) => a + b, 0)
+    const calculateCart = cart.map(cartItem => cartItem.grandTotalForItem)
+     const accumulatedCartTotal = calculateCart.reduce((a, b) => a + b, 0)
 
     
 

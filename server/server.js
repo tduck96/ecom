@@ -1,24 +1,17 @@
 require('dotenv').config();
 
-
 const express = require('express');
-const mysql = require('mysql2');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
-const saltRounds = 5;
+const con = require('./config/config');
+const homepageRoute = require('./homepage');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
+
 app.use(express.json());
-   const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const con = mysql.createConnection({
-    host: 'localhost', 
-    user: 'tom',
-    password: 'pizza-hut',
-    database: 'ecom'
-})
 
-con.connect();
+app.use('./homepage', homepageRoute);
 app.use(cors())
 
 // Send to Stripe
@@ -51,43 +44,20 @@ console.log(priceCents)
 
  });
 
-
-    
-   
-    // const id = cart[0].id
-    // const quantity = cart[0].quantity;
-
-// const querySearch = `SELECT * FROM items WHERE id = ${getit}`
-
-// con.query(querySearch, (err, res) => { 
-//     if (res) console.log(res);
-//     if (err) console.log(err)
-// })
-
-   
-// })
-
 // Create User 
 
 app.post('/api/register', (req, res) => {
    const email = req.body.email;
    const password = req.body.password;
-
-//    bcrypt.genSalt(saltRounds, function(err, salt) {
-//     bcrypt.hash(password, salt, function(err, hash){
-//         const hashpass = hash;
-//         console.log(hashpass)
-
         if (email === undefined || password === undefined) {
-            res.send({error: "Invalid email/password"}) }
+         res.send({error: "Invalid email/password"}) }
         else {
-            const pushUser = (`INSERT INTO users VALUES ("${email}", "${password}") `)
+    const pushUser = (`INSERT INTO users VALUES ("${email}", "${password}") `)
 
-                 con.query(pushUser, (err, res) => {
-                      if (err) console.log(err) 
-                            else {
-                                console.log('record added')
-                            }
+     con.query(pushUser, (err, res) => {
+         if (err) console.log(err) 
+         else {
+             console.log('record added') }
 })
 }
     })
@@ -117,20 +87,6 @@ app.post('/api/login' , (req, res) => {
                    })
                  }
                  );
-    
-
-
-       
-
-       
-                     
-            
-
-   
-
-     
-  
-  
 
 
 // Get Items at Home Page Start up 
@@ -144,7 +100,6 @@ app.get('/api/get', (req, res) => {
     })
 }
 )
-
 
 // Get item for Detaisl 
 app.get('/api/get/:id', (req, res) => {
@@ -160,8 +115,6 @@ con.query(sqlGetSingle, (err, data) => {
 })
 
 })
-
-
 
 app.listen(3001, (req, res) => {
     console.log('running on port 3001')

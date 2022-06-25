@@ -35,7 +35,7 @@ function App() {
         <Routes>
             <Route path = '/login' element = {<Login loggedin = {loggedin} setLoggedin = {setLoggedin}/>} />
             <Route path = '/' element = {<Marketplace />} />
-            <Route  path ='/prints/:id' element={<Item  cart = {cart} setCart = {setCart}/>} />
+            <Route  path ='/prints/:id' element={<Item  cart = {cart} setCart = {setCart} loggedin ={loggedin}/>} />
             <Route path = '/cart' element = {<Cart cart = {cart} setCart={setCart}/>} />
             <Route path = '/signup' element = {<Signup />} /> 
             <Route path = '/paymentsuccess' element = {<PaymentSuccess cart = {cart}  setCart ={setCart} />} />

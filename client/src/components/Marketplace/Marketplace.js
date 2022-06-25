@@ -20,18 +20,19 @@ const Marketplace = () => {
 
     <div className ={styles.shopContainer}>
       <h1> Shop Prints:</h1>
+      <div className = {styles.flexit}>
     <div className = {styles.container}>
       
      {
       itemList.map(item => (
         <div className = {styles.card} key = {item.id}>
-          <a href = {`/prints/${item.id}`}>
+          <a href = {`/prints/${item.id}`} className = {styles.link}>
           <img src = {item.photo_url} alt='photoitems' className = {styles.photos}></img>
           </a>
       </div>
      )
 )}
-     
+     </div>
     </div>
     </div>
   )
