@@ -8,7 +8,7 @@ const Marketplace = () => {
   const [itemList, setItemList] = useState([]);
 
   const getItems = async () => {
-   const shopData = await axios.get('/api/get')
+     await axios.get('/api/get')
     .then(res => setItemList(res.data)) 
   }
 

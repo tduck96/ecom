@@ -8,8 +8,7 @@ const axios = require('axios');
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const [data, setData] = useState('');
+
   
     const navigate = useNavigate();
 

@@ -60,9 +60,7 @@ const Login = ( {loggedin, setLoggedin }) => {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+ 
   <div className = {styles.buttonContainer}>
   <Button variant="primary" type="submit" className = {styles.button} onClick= {submitHandler}>
     Submit

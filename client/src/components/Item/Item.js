@@ -32,6 +32,7 @@ const Item = ({cart, setCart}) => {
       function addToCartIfNotADuplicate(){
       setCart([
           ...cart, {
+          id: item.id,
           name: item.name,
           price: item.price,
           photo: item.photo_url,
@@ -52,15 +53,17 @@ console.log(quantity)
     {
       information.map(item => (
         <div className = {styles.card} key = {item.id}>
-          <img src = {item.photo_url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
-          <div className = {styles.description}>
+          <div className = {styles.header}>
           <h1 className={styles.name}>{item.name}</h1>
+          <img src = {item.photo_url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
+          </div>
+          <div className = {styles.description}>
+          
           <p> Price : ${item.price} </p>
-          <p> {item.inventory} left in stock</p>
           <p> <i>{item.description} </i></p>
           
           <div className = {styles.cartBox}>
-            <label for ='quantity'>Select a quantity:</label>
+            <label for ='quantity'>Quantity:</label>
             <select id = 'quantity' name = 'quantity' onChange = {(e) => 
               setQuantity(e.target.value)}> 
               <option value ='1'>1</option>
@@ -70,7 +73,6 @@ console.log(quantity)
               <option value ='5'>5</option>
               </select>
             <button className = {styles.cartBut}onClick = {() => cartHandler(item)}>Add to Cart</button>
-            {/* <button> Add to Watchlist </button> */}
             </div>
             </div>
         </div>
