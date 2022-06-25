@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Marketplace from './components/Marketplace/Marketplace';
 import Navigation from './components/Nav/Navigation';
 import Signup from './components/Signup/Signup';
+import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route  path ='/prints/:id' element={<Item  cart = {cart} setCart = {setCart}/>} />
             <Route path = '/cart' element = {<Cart cart = {cart} setCart={setCart}/>} />
             <Route path = '/signup' element = {<Signup />} /> 
+            <Route path = '/paymentsuccess' element = {<PaymentSuccess cart = {cart}  setCart ={setCart} />} />
         
         </Routes>
         </div>

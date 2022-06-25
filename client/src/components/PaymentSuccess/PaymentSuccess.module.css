@@ -1,0 +1,29 @@
+.image {
+    height: 100px;
+    width: 150px;
+    border-radius: 1rem;
+}
+.card {
+    display: flex;
+    margin: 2rem;
+}
+.details {
+    margin-left: 1rem;
+    font-style: italic;
+}
+.center{
+    text-align: center;
+}
+.returnbutton {
+    padding: 1.5rem;
+    width: 35%;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgb(45, 72, 246);
+    color: white;
+    font-size: 1rem;
+}
+.alignCenter {
+    display: flex;
+    justify-content: center;
+}
