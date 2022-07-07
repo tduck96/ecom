@@ -15,18 +15,20 @@ import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 
 function App() {
 
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')));
-  const [loggedin, setLoggedin] = useState(JSON.parse(localStorage.getItem('loggedin')))
+  const [cart, setCart] = useState(JSON.parse(window.localStorage.getItem('cart')) ?? []);
+  const [loggedin, setLoggedin] = useState(JSON.parse(window.localStorage.getItem('loggedin')) ?? (false));
 
   
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
+    window.localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart]);
   useEffect(() => {
-    localStorage.setItem('loggedin', JSON.stringify(loggedin))
+    window.localStorage.setItem('loggedin', JSON.stringify(loggedin))
   }, [loggedin])
 
   
+    
+
   return (
     <div>
         <Router>

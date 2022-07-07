@@ -24,7 +24,7 @@ const Login = ( {loggedin, setLoggedin }) => {
   const submitHandler = (e) => {
     e.preventDefault()
    async function validateUser() { 
-    await axios.post('http://localhost:3001/api/login', {email: email, password: password})
+    await axios.post('https://prettyprints.herokuapp.com/api/login', {email: email, password: password})
     .then(res => res.data[0] ? setLoggedin(true) : setErrorMes('Invalid Email/Password'), setLoggedin(false) )
     .catch(error => console.log(error.data))
 

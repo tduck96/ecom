@@ -13,8 +13,9 @@ const Item = ({cart, setCart, loggedin}) => {
   const navigate = useNavigate();
   
   const fetchPrint = async () => {
-     axios.get(`/api/get/${id}`)
-    .then(res => setInformation(res.data))
+     axios.get(`https://prettyprints.herokuapp.com/api/get/${id}`)
+     .then(res => setInformation(res.data))
+    
    }
 
    useEffect(() => {
@@ -35,18 +36,13 @@ const Item = ({cart, setCart, loggedin}) => {
           id: item.id,
           name: item.name,
           price: item.price,
-          photo: item.photo_url,
+          photo: item.url,
           quantity: quantity,
           grandTotalForItem: ItemTimesQuantity(item.price, quantity)
         }
       ])
-      navigate('/cart')
+      if (loggedin === true) navigate('/cart')   
     }}
-
-console.log(quantity)
-   
-
-   
 
   return (
     <div className = {styles.container}>
@@ -54,7 +50,7 @@ console.log(quantity)
       information.map(item => (
         <div className = {styles.card} key = {item.id}>
           
-          <img src = {item.photo_url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
+          <img src = {item.url} alt ='referencePhoto' className = {styles.referencePhoto}></img>
           
           <div className = {styles.description}>
             <div className = {styles.header}>

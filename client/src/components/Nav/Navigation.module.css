@@ -22,3 +22,10 @@ a {
 a:hover {
     border:1px solid white;
 }
+
+@media screen and (max-width: 400px) {
+    a {
+        font-size: .8rem;
+        margin: 0;
+    }
+}

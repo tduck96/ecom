@@ -31,7 +31,7 @@ const PaymentSuccess = ( {cart, setCart}) => {
             </div>
         )) }
 
-        <h1>Order Total: ${accumulatedCartTotal}</h1>
+        <h1>Order Total: ${accumulatedCartTotal}</h1> 
         <div className= {styles.alignCenter}>
         <button onClick = {successHandler} className = {styles.returnbutton}>Finish</button>
         </div>

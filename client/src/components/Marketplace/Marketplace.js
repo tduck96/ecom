@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-import Link from 'react-router-dom';
 import styles from './Marketplace.module.css';
 import axios from 'axios'
 
@@ -8,10 +7,9 @@ const Marketplace = () => {
   const [itemList, setItemList] = useState([]);
 
   const getItems = async () => {
-     await axios.get('/api/get')
+     await axios.get('https://prettyprints.herokuapp.com/api/get')
     .then(res => setItemList(res.data)) 
   }
-
   useEffect(() => {
     getItems();
   }, [])
@@ -27,7 +25,7 @@ const Marketplace = () => {
       itemList.map(item => (
         <div className = {styles.card} key = {item.id}>
           <a href = {`/prints/${item.id}`} className = {styles.link}>
-          <img src = {item.photo_url} alt='photoitems' className = {styles.photos}></img>
+          <img src = {item.url} alt='photoitems' className = {styles.photos}></img>
           </a>
       </div>
      )

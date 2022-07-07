@@ -20,7 +20,7 @@ const Signup = () => {
           //  newuser ? sendUser() : setErrorMessage('Something went wrong try again')
        
   async function sendUser() {
-       await axios.post('http://localhost:3001/api/register', {email: email, 
+       await axios.post('https://prettyprints.herokuapp.com/api/register', {email: email, 
       password: password})
         .then(response => response.data)
         .catch(error => console.log(error.data))

@@ -28,14 +28,20 @@ const calculateCart =
   }
 
   function handleCheckout () {
-
    const sendtoStripe = async() => {
-    await axios.post('http://localhost:3001/create-checkout-session', {
+    await axios.post('https://prettyprints.herokuapp.com/create-checkout-session', {
      sum: accumulatedCartTotal
+   }, 
+   {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json",
+    }
    })
     .then(response => response.data)
-     .then (({url}) => window.location = url)
-     .catch(error => console.log(error))
+     .then( ({url}) => window.location = url)
+    .catch(error => console.log(error))
    }
    sendtoStripe();
    }
