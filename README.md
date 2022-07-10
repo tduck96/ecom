@@ -8,7 +8,7 @@ Payment portal integrated from Stripe API. I have payment system set up with the
 FINAL THOUGHTS : 
 
 
-I built a simple login form but I disabled it for ease of use for those viewing this application. I plan on developing this to integrate JWT web tokens. 
+I built a simple login form but I disabled it for ease of use for those viewing this application. I plan on developing this authorization/authenticiation system. I've considered integrating web-tokens. 
 
 I would like integrate a more complex database system to handle orders in future. I'm interested in learning more about database design. My plan when I started this project was to reach that level of complexity. That's why I used mySQL instead of something more simple like Firebase. 
 
