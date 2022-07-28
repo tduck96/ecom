@@ -1,4 +1,4 @@
-Katies Knicknacks
+# Pretty Prints #
 Ecommerce project, online marketspace to sell photography shots.
 
 TechStack: React, Node, Express, MYSQL
