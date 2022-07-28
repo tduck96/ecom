@@ -1,7 +1,11 @@
 # Pretty Prints #
-Ecommerce project, online marketspace to sell photography shots.
+ ### Ecommerce project, online marketspace to sell photography shots. ###
 
-TechStack: React, Node, Express, MYSQL
+## TechStack: ##
+-React
+-Node
+-Express
+-MYSQL
 
 Payment portal integrated from Stripe API. I have payment system set up with the test API key right now. To simulate an actual sale use a repeated 42 for card data. 
 
