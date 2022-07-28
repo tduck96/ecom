@@ -1,15 +1,16 @@
 # Pretty Prints #
  ### Ecommerce project, online marketspace to sell photography shots. ###
 
-## TechStack: ##
+### TechStack: ###
 -React
 -Node
 -Express
 -MYSQL
 
+## For Your Consideration :
 Payment portal integrated from Stripe API. I have payment system set up with the test API key right now. To simulate an actual sale use a repeated 42 for card data. 
 
-FINAL THOUGHTS : 
+### FINAL THOUGHTS : ###
 
 
 I built a simple login form but I disabled it for ease of use for those viewing this application. I plan on developing this authorization/authenticiation system. I've considered integrating web-tokens. 
@@ -22,7 +23,7 @@ With a growing number of products, I could then build out a pagination feature, 
 
 If I started this project over I would begin with adding some sort of state management like Redux, as I'm going to have to reconfigure the project to develop it any further. 
 
-I had some problems with CORS after deployment that I hadn't encountered in the past. I learned a lot about custom OPTIONS requests.   
+<sub> I had some problems with CORS after deployment that I hadn't encountered in the past. I learned a lot about custom OPTIONS requests. </sub>
 
 Deployed on Heroku: 
 
